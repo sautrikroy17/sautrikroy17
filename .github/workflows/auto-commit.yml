@@ -35,8 +35,8 @@ jobs:
 
       - name: Commit and push changes
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "sautrikroy17"
+          git config --global user.email "sautrikroy2006@gmail.com"
           git add streak.svg
           git commit -m "chore: auto-sync live contribution graph [skip ci]" || echo "No changes to commit"
           git push
