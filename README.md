@@ -1,82 +1,60 @@
 <div align="center">
-  <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=30&pause=1000&color=38BDF8&center=true&vCenter=true&width=600&height=80&lines=Hi+there!+I'm+Sautrik+Roy+👋;Full-Stack+Developer+%7C+SRMIST;Turning+Coffee+Into+Code+☕;Building+Intelligent+Web+Apps+🚀" alt="Typing SVG" />
+  <h1 align="center">Sautrik Roy</h1>
+  <h3 align="center">Software Engineer | Competitive Programmer</h3>
+  <p align="center">
+    <a href="https://sautrikroy.me">Portfolio</a> •
+    <a href="https://leetcode.com/u/sautrikroy17">LeetCode</a> •
+    <a href="https://www.linkedin.com/in/sautrik-roy">LinkedIn</a> •
+    <a href="mailto:contact@sautrikroy.me">Email</a>
+  </p>
+</div>
+
+<br/>
+
+I am a **Software Engineer** and student at **SRMIST**, specializing in full-stack web development and competitive programming. I am passionate about writing highly optimized, scalable code and solving complex algorithmic challenges. My core focus lies in building intelligent systems with **Next.js**, **React**, and **TypeScript**, while utilizing **C++** for high-performance computing and algorithmic problem-solving.
+
+---
+
+### ⚡ Core Competencies
+
+- **Languages:** C++, TypeScript, JavaScript, Python, Java
+- **Frontend Architecture:** React.js, Next.js, Redux, Tailwind CSS, Framer Motion
+- **Backend & Systems:** Node.js, Express, REST APIs, System Design (PostgreSQL, MongoDB), Supabase
+- **Problem Solving:** Data Structures & Algorithms, Competitive Programming, Optimization
+
+---
+
+### 🏆 LeetCode & GitHub Metrics
+
+<div align="center">
+  <img src="https://leetcard.jacoblin.cool/sautrikroy17?theme=dark&font=Inter&ext=activity" alt="LeetCode Stats" />
+  <br/><br/>
+  <a href="https://github.com/sautrikroy17">
+    <img src="https://github-readme-stats.vercel.app/api?username=sautrikroy17&show_icons=true&theme=dark&hide_border=true&bg_color=0D1117" alt="GitHub Stats" width="49%" />
+  </a>
+  <a href="https://github.com/sautrikroy17">
+    <img src="https://github-readme-streak-stats.herokuapp.com/?user=sautrikroy17&theme=dark&hide_border=true&background=0D1117" alt="GitHub Streak" width="49%" />
   </a>
 </div>
 
-<h3 align="center">
-  Crafting Production-Grade Systems & Intelligent UIs. <br>
-  <br>
-  <a href="https://sautrikroy.me">Portfolio</a> •
-  <a href="https://www.linkedin.com/in/sautrik-roy">LinkedIn</a> •
-  <a href="mailto:contact@sautrikroy.me">Email</a>
-</h3>
+---
 
-<br>
+### 🔥 Engineering Projects
 
-## 🚀 About Me
+#### [🧠 Krish AI](https://github.com/sautrikroy17/krish-ai)
+An intelligent, high-speed conversational AI interface powered by **Llama 3.3 70B** and **Groq LPU**. Built with Next.js and optimized for zero-latency streaming responses and a highly interactive UI.
 
-I am a passionate **Full-Stack Developer** and a student at **SRMIST**, focused on building intelligent, robust, and visually stunning applications. I thrive at the intersection of complex backend architectures and immersive frontend experiences, constantly pushing the boundaries of what's possible on the web.
+#### [🎵 Loop — Beyond Limits](https://github.com/sautrikroy17/Loop-Feel-the-waves)
+A highly scalable music streaming platform architected with **TanStack Start**, **Supabase**, and **React 19**. Implements a real-time mood-intelligence engine and complex cross-device synchronization state management.
 
-- 💻 I am currently building scalable, AI-powered web applications using **Next.js**, **React**, and **TypeScript**.
-- 🤖 **Currently Building**: [**Krish AI**](https://github.com/sautrikroy17/krish-ai) — An intelligent, emotionally aware AI bot powered by Llama 3.3 and Groq that helps students with personalised study plans, acts as a coding tutor, and provides genuine conversational support.
-- 🛠️ I love implementing complex logic using **C++** and optimizing system-level architectures.
-- 🤝 Looking forward to collaborating on impactful open-source projects!
+#### [💡 Quizzify AI](https://github.com/sautrikroy17/Quizzify)
+A competitive assessment platform utilizing **Google Gemini AI** and a **C++ backend engine** to parse and generate interactive quizzes from raw PDF files in seconds. Features secure JWT authentication and global leaderboards.
 
-<br>
+#### [🔷 LegacyLens 2.0](https://github.com/sautrikroy17/LegacyLens-2.O)
+An AI-powered Natural Language Database Interface that translates plain English into optimized **MySQL** and **MongoDB** queries. Built for rapid, non-technical data extraction during competitive hackathons.
 
-## 🛠️ Tech Stack & Tools
+---
 
 <div align="center">
-
-### Frontend
-<img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" />
-<img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
-<img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" />
-<img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" />
-<img src="https://img.shields.io/badge/Framer_Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white" />
-
-### Backend & Database
-<img src="https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white" />
-<img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" />
-<img src="https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white" />
-<img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white" />
-<img src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white" />
-
-### Tools
-<img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" />
-<img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" />
-<img src="https://img.shields.io/badge/Prisma-3982CE?style=for-the-badge&logo=Prisma&logoColor=white" />
-
-</div>
-
-<br>
-
-## 🔥 Highlighted Projects
-
-### [🎵 Loop — Beyond Limits](https://github.com/sautrikroy17/Loop-Feel-the-waves)
-A production-grade, mood-driven music streaming platform. Built with TanStack Start, React 19, Supabase, and Framer Motion. Features a live mood-intelligence engine and multi-device real-time sync.
-
-### [🧠 Quizzify AI](https://github.com/sautrikroy17/Quizzify)
-An advanced Next.js and C++ platform that transforms any PDF into an interactive competitive assessment in seconds using Google Gemini AI. Features secure authentication and global leaderboards.
-
-### [🔷 LegacyLens 2.0](https://github.com/sautrikroy17/LegacyLens-2.O)
-An AI-powered Natural Language Database Interface that allows non-technical users to query MySQL and MongoDB databases using plain English. Built for competitive hackathons.
-
-<br>
-
-## 📈 GitHub Stats
-
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=sautrikroy17&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117" alt="GitHub Stats" />
-  <br><br>
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=sautrikroy17&theme=tokyonight&hide_border=true&background=0D1117" alt="GitHub Streak" />
-  <br><br>
-  <img src="https://leetcard.jacoblin.cool/sautrikroy17?theme=tokyonight&font=Inter&ext=activity" alt="LeetCode Stats" />
-</div>
-
-<br>
-
-<div align="center">
-  <i>Let's build something amazing together! 🚀</i>
+  <i>"Talk is cheap. Show me the code." — Linus Torvalds</i>
 </div>
