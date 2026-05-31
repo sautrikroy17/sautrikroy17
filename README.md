@@ -71,6 +71,8 @@ An AI-powered Natural Language Database Interface that allows non-technical user
   <img src="https://github-readme-stats.vercel.app/api?username=sautrikroy17&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117" alt="GitHub Stats" />
   <br><br>
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=sautrikroy17&theme=tokyonight&hide_border=true&background=0D1117" alt="GitHub Streak" />
+  <br><br>
+  <img src="https://leetcard.jacoblin.cool/sautrikroy17?theme=tokyonight&font=Inter&ext=activity" alt="LeetCode Stats" />
 </div>
 
 <br>
