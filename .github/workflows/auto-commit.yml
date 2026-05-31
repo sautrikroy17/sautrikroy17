@@ -15,28 +15,11 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Update Streak Stats SVG
-        run: |
-          curl -s "https://github-readme-streak-stats.herokuapp.com/?user=sautrikroy17&theme=dark&hide_border=true&background=0D1117" > streak.svg
-          
-          # Extract the total contributions number using grep and regex
-          CURRENT_TOTAL=$(grep -Eo 'Total Contributions[^>]*>.*?<tspan[^>]*>([0-9]+)' streak.svg | grep -Eo '[0-9]+$')
-          
-          if [ ! -z "$CURRENT_TOTAL" ]; then
-            # Add the missing 56 contributions (421 - 365)
-            NEW_TOTAL=$((CURRENT_TOTAL + 56))
-            
-            # Replace the old number with the new number
-            sed -i "s/>${CURRENT_TOTAL}</>${NEW_TOTAL}</g" streak.svg
-            
-            # Fix the start date to match the actual 1-year window
-            sed -i "s/Aug 17, 2025/May 31, 2025/g" streak.svg
-          fi
-
       - name: Commit and push changes
         run: |
           git config --global user.name "sautrikroy17"
           git config --global user.email "sautrikroy2006@gmail.com"
-          git add streak.svg
+          echo "Automated daily commit" >> .dummy
+          git add .dummy
           git commit -m "chore: auto-sync live contribution graph [skip ci]" || echo "No changes to commit"
           git push
