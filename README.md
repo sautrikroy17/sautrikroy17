@@ -10,7 +10,7 @@
 
 <br/>
 
-I am a **B.Tech CSE Student** at **SRMIST** and a passionate Full-Stack Developer. I specialize in building highly optimized, scalable web applications and solving complex algorithmic challenges. My core focus lies in building intelligent systems with **Next.js**, **React**, and **TypeScript**, while utilizing **C++**, **Java**, and **Python** for high-performance computing and algorithmic problem-solving.
+I am a **B.Tech CSE Student** at **SRMIST** and a passionate Full-Stack Developer. I specialize in building highly optimized, scalable web applications, solving Leetcode and solving complex algorithmic challenges. My core focus lies in building intelligent systems with **Next.js**, **React**, and **TypeScript**, while utilizing **C++**, **Java**, and **Python** for high-performance computing and algorithmic problem-solving.
 
 ---
 
