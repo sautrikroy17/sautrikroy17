@@ -26,6 +26,7 @@
 I am a passionate **Full-Stack Developer** focused on building intelligent, robust, and visually stunning applications. I thrive at the intersection of complex backend architectures and immersive frontend experiences. I'm actively applying for **GirlScript Summer of Code (GSSoC)** to give back to the community, collaborate with amazing developers, and dive deep into the open-source world!
 
 - 💻 I am currently building scalable, AI-powered web applications using **Next.js**, **React**, and **TypeScript**.
+- 🤖 **Currently Building**: [**Krish AI**](https://github.com/sautrikroy17/krish-ai) — An intelligent, emotionally aware AI bot powered by Llama 3.3 and Groq that helps students with personalised study plans, acts as a coding tutor, and provides genuine conversational support.
 - 🛠️ I love implementing complex logic using **C++** and optimizing system-level architectures.
 - 🤝 Looking forward to collaborating on open-source projects!
 
