@@ -3,8 +3,8 @@
   <h3 align="center">B.Tech CSE Student | Full-Stack Developer</h3>
   <p align="center">
     <a href="https://sautrikroy.me">Portfolio</a> •
-    <a href="https://www.linkedin.com/in/sautrik-roy">LinkedIn</a> •
-    <a href="mailto:contact@sautrikroy.me">Email</a>
+    <a href="https://www.linkedin.com/in/sautrik-roy-1779r/">LinkedIn</a> •
+    <a href="mailto:sautrikroy2006@gmail.com">Email</a>
   </p>
 </div>
 
