@@ -1,9 +1,8 @@
 <div align="center">
   <h1 align="center">Sautrik Roy</h1>
-  <h3 align="center">Software Engineer | Competitive Programmer</h3>
+  <h3 align="center">B.Tech CSE Student | Full-Stack Developer</h3>
   <p align="center">
     <a href="https://sautrikroy.me">Portfolio</a> •
-    <a href="https://leetcode.com/u/sautrikroy17">LeetCode</a> •
     <a href="https://www.linkedin.com/in/sautrik-roy">LinkedIn</a> •
     <a href="mailto:contact@sautrikroy.me">Email</a>
   </p>
@@ -11,7 +10,7 @@
 
 <br/>
 
-I am a **Software Engineer** and student at **SRMIST**, specializing in full-stack web development and competitive programming. I am passionate about writing highly optimized, scalable code and solving complex algorithmic challenges. My core focus lies in building intelligent systems with **Next.js**, **React**, and **TypeScript**, while utilizing **C++** for high-performance computing and algorithmic problem-solving.
+I am a **B.Tech CSE Student** at **SRMIST** and a passionate Full-Stack Developer. I specialize in building highly optimized, scalable web applications and solving complex algorithmic challenges. My core focus lies in building intelligent systems with **Next.js**, **React**, and **TypeScript**, while utilizing **C++**, **Java**, and **Python** for high-performance computing and algorithmic problem-solving.
 
 ---
 
@@ -19,7 +18,11 @@ I am a **Software Engineer** and student at **SRMIST**, specializing in full-sta
 
 <div align="center">
   <img src="https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white" alt="C++" />
+  <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java" />
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" />
   <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
+  <br/>
   <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js" />
   <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" />
   <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js" />
@@ -37,10 +40,7 @@ I am a **Software Engineer** and student at **SRMIST**, specializing in full-sta
 
 <div align="center">
   <a href="https://github.com/sautrikroy17">
-    <img src="https://github-readme-stats.vercel.app/api?username=sautrikroy17&show_icons=true&theme=dark&hide_border=true&bg_color=0D1117" alt="GitHub Stats" width="49%" />
-  </a>
-  <a href="https://github.com/sautrikroy17">
-    <img src="https://github-readme-streak-stats.herokuapp.com/?user=sautrikroy17&theme=dark&hide_border=true&background=0D1117" alt="GitHub Streak" width="49%" />
+    <img src="https://github-readme-streak-stats.herokuapp.com/?user=sautrikroy17&theme=dark&hide_border=true&background=0D1117" alt="GitHub Streak" width="50%" />
   </a>
 </div>
 
