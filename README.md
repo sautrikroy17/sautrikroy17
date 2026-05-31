@@ -24,11 +24,9 @@ I am a **Software Engineer** and student at **SRMIST**, specializing in full-sta
 
 ---
 
-### 🏆 LeetCode & GitHub Metrics
+### 🏆 GitHub Metrics
 
 <div align="center">
-  <img src="https://leetcard.jacoblin.cool/sautrikroy17?theme=dark&font=Inter&ext=activity" alt="LeetCode Stats" />
-  <br/><br/>
   <a href="https://github.com/sautrikroy17">
     <img src="https://github-readme-stats.vercel.app/api?username=sautrikroy17&show_icons=true&theme=dark&hide_border=true&bg_color=0D1117" alt="GitHub Stats" width="49%" />
   </a>
