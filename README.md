@@ -48,14 +48,20 @@ I am a **B.Tech CSE Student** at **SRMIST** and a passionate Full-Stack Develope
 
 ### 🔥 Engineering Projects
 
-#### [🎵 Loop — Beyond Limits](https://github.com/sautrikroy17/Loop-Feel-the-waves)
-A highly scalable music streaming platform architected with **TanStack Start**, **Supabase**, and **React 19**. Implements a real-time mood-intelligence engine and complex cross-device synchronization state management.
-
 #### [💡 Quizzify AI](https://github.com/sautrikroy17/Quizzify)
 A competitive assessment platform utilizing **Google Gemini AI** and a **C++ backend engine** to parse and generate interactive quizzes from raw PDF files in seconds. Features secure JWT authentication and global leaderboards.
 
 #### [🔷 LegacyLens 2.0](https://github.com/sautrikroy17/LegacyLens-2.O)
 An AI-powered Natural Language Database Interface that translates plain English into optimized **MySQL** and **MongoDB** queries. Built for rapid, non-technical data extraction during competitive hackathons.
+
+#### [🎵 Loop — Beyond Limits](https://github.com/sautrikroy17/Loop-Feel-the-waves)
+A highly scalable music streaming platform architected with **TanStack Start**, **Supabase**, and **React 19**. Implements a real-time mood-intelligence engine and complex cross-device synchronization state management.
+
+#### [✨ Personal Portfolio](https://github.com/sautrikroy17/Personal-Portolio)
+An ultra-premium, highly interactive full-stack developer portfolio built with **React**, **Vite**, and **Framer Motion**. Features deep custom aesthetics, smooth scroll parallax animations, and glassmorphism design.
+
+#### [💳 Credit Card Validator](https://github.com/sautrikroy17/Credit-Card-Validator)
+A high-speed, object-oriented Python utility that implements the **Luhn Algorithm** for robust checksum validation. Identifies major card networks (Visa, Mastercard, Amex, etc.) with real-time terminal processing.
 
 #### [🧠 Krish AI](https://github.com/sautrikroy17/krish-ai)
 An intelligent, high-speed conversational AI interface powered by **Llama 3.3 70B** and **Groq LPU**. Built with Next.js and optimized for zero-latency streaming responses and a highly interactive UI. *(🚧 Actively in development)*
