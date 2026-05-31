@@ -19,7 +19,8 @@ jobs:
         run: |
           git config --global user.name "sautrikroy17"
           git config --global user.email "sautrikroy2006@gmail.com"
+          curl -s "https://github-readme-streak-stats.herokuapp.com/?user=sautrikroy17&theme=dark&hide_border=true&background=0D1117" > streak.svg
           echo "Automated daily commit" >> .dummy
-          git add .dummy
+          git add .dummy streak.svg
           git commit -m "chore: auto-sync live contribution graph [skip ci]" || echo "No changes to commit"
           git push
