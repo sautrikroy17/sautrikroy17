@@ -40,7 +40,7 @@ I am a **B.Tech CSE Student** at **SRMIST** and a passionate Full-Stack Develope
 
 <div align="center">
   <a href="https://github.com/sautrikroy17">
-    <img src="streak.svg" alt="GitHub Streak" width="50%" />
+    <img src="streak.svg?v=2" alt="GitHub Streak" width="50%" />
   </a>
 </div>
 
