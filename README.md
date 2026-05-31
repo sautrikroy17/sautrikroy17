@@ -40,7 +40,7 @@ I am a **B.Tech CSE Student** at **SRMIST** and a passionate Full-Stack Develope
 
 <div align="center">
   <a href="https://github.com/sautrikroy17">
-    <img src="https://github-readme-streak-stats.herokuapp.com/?user=sautrikroy17&theme=dark&hide_border=true&background=0D1117&v=1" alt="GitHub Streak" width="50%" />
+    <img src="streak.svg" alt="GitHub Streak" width="50%" />
   </a>
 </div>
 
