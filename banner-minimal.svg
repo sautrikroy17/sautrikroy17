@@ -2,8 +2,8 @@
   <defs>
     <style>
       /* Clean, stark minimalism */
-      .name { font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Helvetica Neue', sans-serif; font-weight: 800; font-size: 58px; fill: #171717; letter-spacing: -1.5px; }
-      .role { font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif; font-weight: 500; font-size: 20px; fill: #404040; letter-spacing: 1px; }
+      .name { font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Helvetica Neue', sans-serif; font-weight: 800; font-size: 62px; fill: #111111; letter-spacing: -1.5px; }
+      .role { font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif; font-weight: 600; font-size: 20px; fill: #52525B; letter-spacing: 2px; text-transform: uppercase; }
       
       /* The code font they explicitly loved */
       .code-line { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', monospace; font-size: 13px; fill: #A1A1AA; }
@@ -13,42 +13,69 @@
       
       /* Right side text */
       .right-text { font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif; font-weight: 700; font-size: 26px; fill: #ffffff; text-anchor: middle; }
+
+      /* Premium Minimalist Animations */
+      @keyframes float-star {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(-10px) rotate(15deg); }
+      }
+      @keyframes float-brackets {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(8px); }
+      }
+      @keyframes pulse-text {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.6; }
+      }
+      @keyframes blink-cursor {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0; }
+      }
+      
+      .star-anim { animation: float-star 6s ease-in-out infinite; transform-origin: center; }
+      .brackets-anim { animation: float-brackets 8s ease-in-out infinite; transform-origin: center; }
+      .glow-anim { animation: pulse-text 5s ease-in-out infinite; }
+      .cursor-anim { animation: blink-cursor 1.2s step-end infinite; font-weight: bold; fill: #ffffff; }
     </style>
   </defs>
 
   <!-- 1. Left Side: Minimalist Cream Background -->
-  <rect width="100%" height="100%" fill="#F1F0E8" />
+  <rect width="100%" height="100%" fill="#F4F4F0" />
 
   <!-- 2. Middle: Sharp Dark Diagonal -->
-  <path d="M 550 0 L 1000 0 L 1000 300 L 350 300 Z" fill="#181818" />
+  <path d="M 550 0 L 1000 0 L 1000 300 L 350 300 Z" fill="#121212" />
 
   <!-- 3. Right: Sharp Accent Diagonal (Vibrant Developer Indigo) -->
-  <path d="M 820 0 L 1000 0 L 1000 300 L 700 300 Z" fill="#4F46E5" />
+  <path d="M 820 0 L 1000 0 L 1000 300 L 700 300 Z" fill="#4338CA" />
 
   <!-- Typography Content (Cream area) -->
   <g transform="translate(70, 140)">
     <text x="0" y="0" class="name">Sautrik Roy</text>
-    <text x="4" y="35" class="role">Developer ✦ AI Engineer</text>
+    <text x="4" y="40" class="role">Full-Stack Developer</text>
   </g>
 
-  <!-- Middle Minimalist Accents (White scribbles/stars on dark background like screenshot) -->
+  <!-- Middle Minimalist Accents (Animated) -->
   <g transform="translate(580, 80)" stroke="#ffffff" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
-    <!-- Clean Minimalist Star -->
-    <path d="M 0 -15 Q 0 0 15 0 Q 0 0 0 15 Q 0 0 -15 0 Q 0 0 0 -15 Z" fill="#ffffff" stroke="none" opacity="0.9" />
+    <!-- Animated Minimalist Star -->
+    <g class="star-anim">
+      <path d="M 0 -15 Q 0 0 15 0 Q 0 0 0 15 Q 0 0 -15 0 Q 0 0 0 -15 Z" fill="#ffffff" stroke="none" opacity="0.9" />
+    </g>
     
-    <!-- Abstract Code Brackets -->
-    <path d="M 50 40 L 35 55 L 50 70" opacity="0.6"/>
-    <path d="M 70 40 L 85 55 L 70 70" opacity="0.6"/>
+    <!-- Animated Abstract Code Brackets -->
+    <g class="brackets-anim">
+      <path d="M 50 40 L 35 55 L 50 70" opacity="0.6"/>
+      <path d="M 70 40 L 85 55 L 70 70" opacity="0.6"/>
+    </g>
   </g>
 
   <!-- The Code Lines (Positioned cleanly in the dark area) -->
   <g transform="translate(400, 240)">
     <text x="0" y="0" class="code-line"><tspan class="code-keyword">const</tspan> mission = <tspan class="code-string">"Building highly scalable systems"</tspan>;</text>
-    <text x="0" y="24" class="code-line"><tspan class="code-keyword">while</tspan> (alive) { <tspan class="code-func">code</tspan>(); <tspan class="code-func">create</tspan>(); <tspan class="code-func">optimize</tspan>(); }</text>
+    <text x="0" y="24" class="code-line"><tspan class="code-keyword">while</tspan> (alive) { <tspan class="code-func">code</tspan>(); <tspan class="code-func">create</tspan>(); <tspan class="code-func">optimize</tspan>(); }<tspan class="cursor-anim">_</tspan></text>
   </g>
 
-  <!-- Right Typography (Indigo area) -->
-  <g transform="translate(870, 150)">
+  <!-- Right Typography (Indigo area - subtly pulsing) -->
+  <g transform="translate(870, 150)" class="glow-anim">
     <text x="0" y="0" class="right-text">Where code</text>
     <text x="0" y="35" class="right-text">meets creativity.</text>
   </g>

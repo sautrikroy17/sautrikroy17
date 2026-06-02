@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="banner-minimal.svg" alt="Sautrik Roy Banner" width="100%" />
+  <img src="banner-minimal.svg?v=4" alt="Sautrik Roy Banner" width="100%" />
   
   <br/>
   
