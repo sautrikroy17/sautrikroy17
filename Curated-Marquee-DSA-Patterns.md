@@ -1,13 +1,13 @@
-# 🚀 The Ultimate Curated DSA Patterns for Cracking FAANG Interviews (2027)
+# 🚀 The Ultimate Curated DSA Patterns for Cracking Marquee Tech Interviews (2027)
 
-This is not a list of 500 random problems. This is the **highly curated, zero-BS** collection of the exact algorithmic patterns that Amazon, Microsoft, Google, and Meta actually test in their technical rounds.
+This is not a list of 500 random problems. This is the **highly curated, zero-BS** collection of the exact algorithmic patterns that Marquee tech companies (Amazon, Microsoft, Google, Meta, Apple, etc.) actually test in their technical rounds.
 
 ---
 
 ## 🛑 WAIT! BEFORE YOU START GRINDING DSA:
 *If you are applying for off-campus roles, the game has changed.*
 
-Passing the technical coding round is **not enough** anymore. In the final System Design & Hiring Manager (HM) rounds, interviewers at FAANG companies expect you to understand how applications scale in the cloud. **If you don't know the basics of Cloud Architecture, you will fail the final round.**
+Passing the technical coding round is **not enough** anymore. In the final System Design & Hiring Manager (HM) rounds, interviewers at Marquee companies expect you to understand how applications scale in the cloud. **If you don't know the basics of Cloud Architecture, you will fail the final round.**
 
 Before you begin these DSA patterns, it is **highly recommended** that you complete this official, 100% free Cloud Architecture crash course. It gives you the exact vocabulary (Load Balancers, Scaling, Virtual Networks) you need to pass the final rounds.
 
