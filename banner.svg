@@ -1,107 +1,56 @@
-<svg width="1200" height="400" viewBox="0 0 1200 400" xmlns="http://www.w3.org/2000/svg">
+<svg width="1000" height="300" viewBox="0 0 1000 300" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <!-- Deep Obsidian Base -->
-    <rect id="bg" width="100%" height="100%" fill="#030303" />
-
-    <!-- Aurora Glowing Orbs (Premium Tech Aesthetic) -->
-    <radialGradient id="aurora-1" cx="0%" cy="0%" r="70%">
-      <stop offset="0%" stop-color="#4F46E5" stop-opacity="0.3" />
-      <stop offset="100%" stop-color="#030303" stop-opacity="0" />
-    </radialGradient>
-    <radialGradient id="aurora-2" cx="100%" cy="100%" r="80%">
-      <stop offset="0%" stop-color="#EC4899" stop-opacity="0.25" />
-      <stop offset="100%" stop-color="#030303" stop-opacity="0" />
-    </radialGradient>
-    <radialGradient id="aurora-3" cx="80%" cy="0%" r="60%">
-      <stop offset="0%" stop-color="#06B6D4" stop-opacity="0.25" />
-      <stop offset="100%" stop-color="#030303" stop-opacity="0" />
-    </radialGradient>
-
-    <!-- Premium Metallic Gradients -->
-    <linearGradient id="gold-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#FDE68A" />
-      <stop offset="50%" stop-color="#D97706" />
-      <stop offset="100%" stop-color="#F59E0B" />
-    </linearGradient>
-    <linearGradient id="silver-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#FFFFFF" />
-      <stop offset="100%" stop-color="#94A3B8" />
-    </linearGradient>
-
-    <!-- Minimalist Precision Dot Grid -->
-    <pattern id="premium-grid" width="30" height="30" patternUnits="userSpaceOnUse">
-      <circle cx="15" cy="15" r="1.5" fill="#ffffff" fill-opacity="0.04" />
-    </pattern>
-
     <style>
-      .name { font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'SF Pro Display', sans-serif; font-weight: 800; font-size: 86px; fill: url(#silver-grad); letter-spacing: -2.5px; }
-      .role { font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif; font-weight: 600; font-size: 22px; fill: #A1A1AA; letter-spacing: 12px; text-transform: uppercase; }
-      .tagline { font-family: 'Playfair Display', 'Georgia', serif; font-style: italic; font-size: 38px; fill: #E4E4E7; letter-spacing: 1px; }
+      /* Clean, stark minimalism */
+      .name { font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Helvetica Neue', sans-serif; font-weight: 800; font-size: 58px; fill: #171717; letter-spacing: -1.5px; }
+      .role { font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif; font-weight: 500; font-size: 20px; fill: #404040; letter-spacing: 1px; }
       
-      /* Code font styling */
-      .code-tag { font-family: 'SFMono-Regular', 'JetBrains Mono', monospace; font-style: normal; font-weight: 600; fill: #38BDF8; font-size: 34px; letter-spacing: -1px; }
+      /* The code font they explicitly loved */
+      .code-line { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', monospace; font-size: 13px; fill: #A1A1AA; }
+      .code-keyword { fill: #c678dd; } 
+      .code-string { fill: #98c379; } 
+      .code-func { fill: #61afef; }
       
-      /* Creativity font styling */
-      .creative-tag { fill: url(#gold-grad); font-weight: bold; }
-      
-      /* Smooth Aurora Animations */
-      @keyframes float-slow { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(-30px, 20px); } }
-      @keyframes float-med { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(20px, -30px); } }
-      
-      .aurora-1 { animation: float-slow 22s ease-in-out infinite; transform-origin: top left; }
-      .aurora-2 { animation: float-med 28s ease-in-out infinite; transform-origin: bottom right; }
-      
-      /* Subtle rotation for abstract shapes */
-      @keyframes spin { 100% { transform: rotate(360deg); } }
-      .spin-slow { animation: spin 60s linear infinite; transform-origin: center; }
-      .spin-reverse { animation: spin 80s linear infinite reverse; transform-origin: center; }
+      /* Right side text */
+      .right-text { font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif; font-weight: 700; font-size: 26px; fill: #ffffff; text-anchor: middle; }
     </style>
   </defs>
 
-  <!-- Deep Base -->
-  <rect width="100%" height="100%" fill="#030303" rx="24" />
-  
-  <!-- Aurora Glows -->
-  <g opacity="0.85">
-    <rect class="aurora-1" width="120%" height="120%" x="-10%" y="-10%" fill="url(#aurora-1)" />
-    <rect class="aurora-2" width="120%" height="120%" x="-10%" y="-10%" fill="url(#aurora-2)" />
-    <rect width="100%" height="100%" fill="url(#aurora-3)" />
+  <!-- 1. Left Side: Minimalist Cream Background -->
+  <rect width="100%" height="100%" fill="#F1F0E8" />
+
+  <!-- 2. Middle: Sharp Dark Diagonal -->
+  <path d="M 550 0 L 1000 0 L 1000 300 L 350 300 Z" fill="#181818" />
+
+  <!-- 3. Right: Sharp Accent Diagonal (Vibrant Developer Indigo) -->
+  <path d="M 820 0 L 1000 0 L 1000 300 L 700 300 Z" fill="#4F46E5" />
+
+  <!-- Typography Content (Cream area) -->
+  <g transform="translate(70, 140)">
+    <text x="0" y="0" class="name">Sautrik Roy</text>
+    <text x="4" y="35" class="role">Developer ✦ AI Engineer</text>
   </g>
 
-  <!-- Precision Dot Grid Overlay -->
-  <rect width="100%" height="100%" fill="url(#premium-grid)" rx="24" />
-
-  <!-- Elegant Geometric Accents (Right Side) -->
-  <g transform="translate(950, 200)">
-    <g class="spin-slow">
-      <circle cx="0" cy="0" r="140" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-opacity="0.08" stroke-dasharray="4 12" />
-      <circle cx="0" cy="0" r="180" fill="none" stroke="url(#gold-grad)" stroke-width="1.5" stroke-opacity="0.2" />
-      <circle cx="180" cy="0" r="4" fill="url(#gold-grad)" opacity="0.6" />
-    </g>
-    <g class="spin-reverse">
-      <circle cx="0" cy="0" r="100" fill="none" stroke="#38BDF8" stroke-width="1" stroke-opacity="0.15" />
-      <path d="M 0 -100 L 0 -110 M 0 100 L 0 110 M -100 0 L -110 0 M 100 0 L 110 0" stroke="#38BDF8" stroke-width="2" stroke-opacity="0.4" />
-    </g>
-  </g>
-
-  <!-- Main Typography Content -->
-  <g transform="translate(100, 170)">
-    <!-- High-end uppercase role -->
-    <text x="5" y="-55" class="role">Software Engineer</text>
+  <!-- Middle Minimalist Accents (White scribbles/stars on dark background like screenshot) -->
+  <g transform="translate(580, 80)" stroke="#ffffff" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Clean Minimalist Star -->
+    <path d="M 0 -15 Q 0 0 15 0 Q 0 0 0 15 Q 0 0 -15 0 Q 0 0 0 -15 Z" fill="#ffffff" stroke="none" opacity="0.9" />
     
-    <!-- Massive Silver Name -->
-    <text x="0" y="45" class="name">Sautrik Roy</text>
-    
-    <!-- Premium Tagline -->
-    <g transform="translate(5, 125)">
-      <text x="0" y="0" class="tagline">Where <tspan class="code-tag">&lt;code/&gt;</tspan> meets <tspan class="creative-tag">creativity.</tspan></text>
-    </g>
+    <!-- Abstract Code Brackets -->
+    <path d="M 50 40 L 35 55 L 50 70" opacity="0.6"/>
+    <path d="M 70 40 L 85 55 L 70 70" opacity="0.6"/>
   </g>
 
-  <!-- Premium Brushed Gold Accent Line -->
-  <rect x="105" y="335" width="100" height="4" fill="url(#gold-grad)" rx="2" />
+  <!-- The Code Lines (Positioned cleanly in the dark area) -->
+  <g transform="translate(400, 240)">
+    <text x="0" y="0" class="code-line"><tspan class="code-keyword">const</tspan> mission = <tspan class="code-string">"Building highly scalable systems"</tspan>;</text>
+    <text x="0" y="24" class="code-line"><tspan class="code-keyword">while</tspan> (alive) { <tspan class="code-func">code</tspan>(); <tspan class="code-func">create</tspan>(); <tspan class="code-func">optimize</tspan>(); }</text>
+  </g>
 
-  <!-- Subtle Light Leaks -->
-  <path d="M 0 0 L 1200 0 L 1200 2 M 0 0" fill="#ffffff" opacity="0.05" />
-  <path d="M 0 0 L 2 0 L 2 400 M 0 0" fill="#ffffff" opacity="0.05" />
+  <!-- Right Typography (Indigo area) -->
+  <g transform="translate(870, 150)">
+    <text x="0" y="0" class="right-text">Where code</text>
+    <text x="0" y="35" class="right-text">meets creativity.</text>
+  </g>
+
 </svg>
