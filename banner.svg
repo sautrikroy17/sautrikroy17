@@ -1,105 +1,107 @@
-<svg width="1000" height="300" viewBox="0 0 1000 300" xmlns="http://www.w3.org/2000/svg">
+<svg width="1200" height="400" viewBox="0 0 1200 400" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <!-- Background Gradient -->
-    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#09090b" />
-      <stop offset="50%" stop-color="#18181b" />
-      <stop offset="100%" stop-color="#09090b" />
+    <!-- Deep Obsidian Base -->
+    <rect id="bg" width="100%" height="100%" fill="#030303" />
+
+    <!-- Aurora Glowing Orbs (Premium Tech Aesthetic) -->
+    <radialGradient id="aurora-1" cx="0%" cy="0%" r="70%">
+      <stop offset="0%" stop-color="#4F46E5" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#030303" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="aurora-2" cx="100%" cy="100%" r="80%">
+      <stop offset="0%" stop-color="#EC4899" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#030303" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="aurora-3" cx="80%" cy="0%" r="60%">
+      <stop offset="0%" stop-color="#06B6D4" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#030303" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Premium Metallic Gradients -->
+    <linearGradient id="gold-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDE68A" />
+      <stop offset="50%" stop-color="#D97706" />
+      <stop offset="100%" stop-color="#F59E0B" />
+    </linearGradient>
+    <linearGradient id="silver-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="100%" stop-color="#94A3B8" />
     </linearGradient>
 
-    <!-- Accent Gradient -->
-    <linearGradient id="accent-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#3b82f6" />
-      <stop offset="100%" stop-color="#8b5cf6" />
-    </linearGradient>
-
-    <!-- Vibrant Gradient for text -->
-    <linearGradient id="text-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#ffffff" />
-      <stop offset="100%" stop-color="#a1a1aa" />
-    </linearGradient>
-
-    <!-- Pattern -->
-    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#27272a" stroke-width="1" />
+    <!-- Minimalist Precision Dot Grid -->
+    <pattern id="premium-grid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <circle cx="15" cy="15" r="1.5" fill="#ffffff" fill-opacity="0.04" />
     </pattern>
 
-    <!-- Glow Filter -->
-    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="15" result="blur" />
-      <feComposite in="SourceGraphic" in2="blur" operator="over" />
-    </filter>
-
-    <!-- Animations -->
     <style>
-      .title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-weight: 800; font-size: 64px; fill: url(#text-grad); }
-      .subtitle { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-weight: 500; font-size: 20px; fill: #a1a1aa; letter-spacing: 2px; text-transform: uppercase; }
-      .quote { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; font-weight: 400; font-size: 14px; fill: #71717a; }
+      .name { font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'SF Pro Display', sans-serif; font-weight: 800; font-size: 86px; fill: url(#silver-grad); letter-spacing: -2.5px; }
+      .role { font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif; font-weight: 600; font-size: 22px; fill: #A1A1AA; letter-spacing: 12px; text-transform: uppercase; }
+      .tagline { font-family: 'Playfair Display', 'Georgia', serif; font-style: italic; font-size: 38px; fill: #E4E4E7; letter-spacing: 1px; }
       
-      /* Floating animation for shapes */
-      @keyframes float1 {
-        0%, 100% { transform: translate(0, 0) rotate(0deg); }
-        50% { transform: translate(-20px, -20px) rotate(5deg); }
-      }
-      @keyframes float2 {
-        0%, 100% { transform: translate(0, 0) rotate(0deg); }
-        50% { transform: translate(20px, 15px) rotate(-5deg); }
-      }
-      @keyframes pulse {
-        0%, 100% { opacity: 0.3; transform: scale(1); }
-        50% { opacity: 0.6; transform: scale(1.05); }
-      }
-      .shape-1 { animation: float1 15s ease-in-out infinite; transform-origin: center; }
-      .shape-2 { animation: float2 20s ease-in-out infinite; transform-origin: center; }
-      .glow-blob { animation: pulse 8s ease-in-out infinite; transform-origin: center; }
+      /* Code font styling */
+      .code-tag { font-family: 'SFMono-Regular', 'JetBrains Mono', monospace; font-style: normal; font-weight: 600; fill: #38BDF8; font-size: 34px; letter-spacing: -1px; }
+      
+      /* Creativity font styling */
+      .creative-tag { fill: url(#gold-grad); font-weight: bold; }
+      
+      /* Smooth Aurora Animations */
+      @keyframes float-slow { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(-30px, 20px); } }
+      @keyframes float-med { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(20px, -30px); } }
+      
+      .aurora-1 { animation: float-slow 22s ease-in-out infinite; transform-origin: top left; }
+      .aurora-2 { animation: float-med 28s ease-in-out infinite; transform-origin: bottom right; }
+      
+      /* Subtle rotation for abstract shapes */
+      @keyframes spin { 100% { transform: rotate(360deg); } }
+      .spin-slow { animation: spin 60s linear infinite; transform-origin: center; }
+      .spin-reverse { animation: spin 80s linear infinite reverse; transform-origin: center; }
     </style>
   </defs>
 
-  <!-- Base Background -->
-  <rect width="100%" height="100%" fill="url(#bg-grad)" rx="16" />
+  <!-- Deep Base -->
+  <rect width="100%" height="100%" fill="#030303" rx="24" />
   
-  <!-- Grid Overlay -->
-  <rect width="100%" height="100%" fill="url(#grid)" opacity="0.6" rx="16" />
-
-  <!-- Animated Glowing Orbs -->
-  <circle cx="850" cy="80" r="120" fill="#3b82f6" opacity="0.3" filter="url(#glow)" class="glow-blob" />
-  <circle cx="950" cy="220" r="100" fill="#8b5cf6" opacity="0.3" filter="url(#glow)" class="glow-blob" style="animation-delay: -4s;" />
-
-  <!-- Abstract Geometrics (Right Side) -->
-  <g class="shape-1" opacity="0.8">
-    <path d="M 650 0 L 1000 350 L 1000 0 Z" fill="#18181b" opacity="0.7" />
-    <path d="M 720 0 L 1000 280 L 1000 0 Z" fill="url(#accent-grad)" opacity="0.15" />
-    <!-- Tech/Code visual element -->
-    <path d="M 800 120 L 820 100 L 850 100" fill="none" stroke="#60a5fa" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
-    <circle cx="850" cy="100" r="4" fill="#60a5fa" />
-    
-    <path d="M 820 180 L 840 200 L 880 200" fill="none" stroke="#a78bfa" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
-    <circle cx="880" cy="200" r="4" fill="#a78bfa" />
+  <!-- Aurora Glows -->
+  <g opacity="0.85">
+    <rect class="aurora-1" width="120%" height="120%" x="-10%" y="-10%" fill="url(#aurora-1)" />
+    <rect class="aurora-2" width="120%" height="120%" x="-10%" y="-10%" fill="url(#aurora-2)" />
+    <rect width="100%" height="100%" fill="url(#aurora-3)" />
   </g>
 
-  <g class="shape-2">
-    <!-- Star / Sparkle element -->
-    <path d="M 680 80 Q 700 80 700 60 Q 700 80 720 80 Q 700 80 700 100 Q 700 80 680 80 Z" fill="#ffffff" opacity="0.8" />
-    <path d="M 880 60 Q 890 60 890 50 Q 890 60 900 60 Q 890 60 890 70 Q 890 60 880 60 Z" fill="#ffffff" opacity="0.5" />
-    
-    <!-- Abstract wavy line -->
-    <path d="M 750 250 Q 780 200 820 250 T 890 250" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" opacity="0.2" />
+  <!-- Precision Dot Grid Overlay -->
+  <rect width="100%" height="100%" fill="url(#premium-grid)" rx="24" />
+
+  <!-- Elegant Geometric Accents (Right Side) -->
+  <g transform="translate(950, 200)">
+    <g class="spin-slow">
+      <circle cx="0" cy="0" r="140" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-opacity="0.08" stroke-dasharray="4 12" />
+      <circle cx="0" cy="0" r="180" fill="none" stroke="url(#gold-grad)" stroke-width="1.5" stroke-opacity="0.2" />
+      <circle cx="180" cy="0" r="4" fill="url(#gold-grad)" opacity="0.6" />
+    </g>
+    <g class="spin-reverse">
+      <circle cx="0" cy="0" r="100" fill="none" stroke="#38BDF8" stroke-width="1" stroke-opacity="0.15" />
+      <path d="M 0 -100 L 0 -110 M 0 100 L 0 110 M -100 0 L -110 0 M 100 0 L 110 0" stroke="#38BDF8" stroke-width="2" stroke-opacity="0.4" />
+    </g>
   </g>
 
-  <!-- Typography Content -->
-  <g transform="translate(70, 130)">
-    <!-- Main Name -->
-    <text x="0" y="0" class="title">Sautrik Roy</text>
+  <!-- Main Typography Content -->
+  <g transform="translate(100, 170)">
+    <!-- High-end uppercase role -->
+    <text x="5" y="-55" class="role">Software Engineer</text>
     
-    <!-- Subtitle -->
-    <text x="5" y="45" class="subtitle">Developer ✦ AI Engineer</text>
+    <!-- Massive Silver Name -->
+    <text x="0" y="45" class="name">Sautrik Roy</text>
     
-    <!-- Subtle separator -->
-    <rect x="5" y="70" width="60" height="4" fill="url(#accent-grad)" rx="2" />
-    
-    <!-- Code-like Quote -->
-    <text x="5" y="110" class="quote">const mission = "Building intelligent, highly scalable systems";</text>
-    <text x="5" y="130" class="quote">while (alive) { code(); create(); optimize(); }</text>
+    <!-- Premium Tagline -->
+    <g transform="translate(5, 125)">
+      <text x="0" y="0" class="tagline">Where <tspan class="code-tag">&lt;code/&gt;</tspan> meets <tspan class="creative-tag">creativity.</tspan></text>
+    </g>
   </g>
 
+  <!-- Premium Brushed Gold Accent Line -->
+  <rect x="105" y="335" width="100" height="4" fill="url(#gold-grad)" rx="2" />
+
+  <!-- Subtle Light Leaks -->
+  <path d="M 0 0 L 1200 0 L 1200 2 M 0 0" fill="#ffffff" opacity="0.05" />
+  <path d="M 0 0 L 2 0 L 2 400 M 0 0" fill="#ffffff" opacity="0.05" />
 </svg>
