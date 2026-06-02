@@ -19,14 +19,7 @@ jobs:
         run: |
           git config --global user.name "sautrikroy17"
           git config --global user.email "sautrikroy2006@gmail.com"
-          curl -s "https://github-readme-streak-stats.herokuapp.com/?user=sautrikroy17&theme=dark&hide_border=true&background=0D1117" > temp_streak.svg
-          if ! grep -q "Failed to retrieve" temp_streak.svg; then
-            mv temp_streak.svg streak.svg
-          else
-            echo "Streak API failed, skipping graph update for today."
-            rm temp_streak.svg
-          fi
           echo "Syncing GitHub activity metrics on $(date)" >> activity_metrics.log
-          git add activity_metrics.log streak.svg
+          git add activity_metrics.log
           git commit -m "chore: auto-sync live contribution graph [skip ci]" || echo "No changes to commit"
           git push
