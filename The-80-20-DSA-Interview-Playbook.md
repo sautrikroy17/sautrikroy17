@@ -1,23 +1,22 @@
-# 🚀 The Ultimate Curated DSA Patterns for Cracking Marquee Tech Interviews (2027)
+# 🚀 The 80/20 DSA Interview Playbook
 
-This is not a list of 500 random problems. This is the **highly curated, zero-BS** collection of the exact algorithmic patterns that Marquee tech companies (Amazon, Microsoft, Google, Meta, Apple, etc.) actually test in their technical rounds.
-
----
-
-## 🛑 WAIT! BEFORE YOU START GRINDING DSA:
-*If you are applying for off-campus roles, the game has changed.*
-
-Passing the technical coding round is **not enough** anymore. In the final System Design & Hiring Manager (HM) rounds, interviewers at Marquee companies expect you to understand how applications scale in the cloud. **If you don't know the basics of Cloud Architecture, you will fail the final round.**
-
-Before you begin these DSA patterns, it is **highly recommended** that you complete this official, 100% free Cloud Architecture crash course. It gives you the exact vocabulary (Load Balancers, Scaling, Virtual Networks) you need to pass the final rounds.
-
-👉 **[Access the Official Free Cloud Architecture & System Design Prep Here](https://learn.microsoft.com/en-us/training/paths/microsoft-azure-fundamentals-describe-cloud-concepts/?wt.mc_id=studentamb_514816)**
-
-*(Do not skip this. Over 60% of candidates fail the final HM round because they only studied algorithms.)*
+This is not a list of 500 random problems. This is the **highly curated, zero-BS** collection of the exact Data Structures & Algorithmic patterns that top tech companies (Microsoft, Amazon, Google, Meta, Apple) actually test in their technical rounds.
 
 ---
 
-## 🧠 Part 1: The Core Patterns (The 80/20 Rule)
+## 🛑 STEP 1: The Core Foundation (Do This First)
+
+Before you begin grinding LeetCode, you need to make sure your core logic and data structure fundamentals are rock solid. If your foundational logic is weak, you will struggle to recognize these patterns during a live interview. 
+
+Before diving into the patterns below, it is **highly recommended** that you brush up on your core logic using Microsoft's official, 100% free developer training hub.
+
+👉 **[Access the Official Microsoft Developer Training Hub Here (DSA Fundamentals & Logic)](https://learn.microsoft.com/en-us/training/?wt.mc_id=studentamb_514816)**
+
+*(Do not skip this step if your core fundamentals are rusty. Top companies care more about your underlying logic than your ability to memorize LeetCode solutions.)*
+
+---
+
+## 🧠 STEP 2: The Core DSA Patterns (The 80/20 Rule)
 
 ### 1. Sliding Window
 *   [Maximum Average Subarray I](https://leetcode.com/problems/maximum-average-subarray-i/) (Easy)
@@ -50,7 +49,7 @@ Before you begin these DSA patterns, it is **highly recommended** that you compl
 
 ---
 
-## 🌳 Part 2: Advanced Structures
+## 🌳 STEP 3: Advanced Structures
 
 ### 6. Tree / Graph BFS
 *   [Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/) (Medium)
@@ -76,4 +75,4 @@ Before you begin these DSA patterns, it is **highly recommended** that you compl
 *   [Longest Common Subsequence](https://leetcode.com/problems/longest-common-subsequence/) (Medium)
 
 ---
-*Bookmark this repository, share it with your friends, and don't forget the Cloud Architecture prep in Step 1! Good luck.*
+*Bookmark this repository, and share it with your friends to help them crush their interviews! Good luck.*
