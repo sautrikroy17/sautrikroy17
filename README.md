@@ -1,6 +1,8 @@
 <div align="center">
-  <h1 align="center">Sautrik Roy</h1>
-  <h3 align="center">B.Tech CSE Student | Full-Stack Developer</h3>
+  <img src="banner.svg" alt="Sautrik Roy Banner" width="100%" />
+  
+  <br/>
+  
   <p align="center">
     <a href="https://sautrikroy.me">Portfolio</a> •
     <a href="https://www.linkedin.com/in/sautrik-roy-1779r/">LinkedIn</a> •
