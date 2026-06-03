@@ -1,18 +1,112 @@
-<svg width="480" height="160" viewBox="0 0 480 160" xmlns="http://www.w3.org/2000/svg">
-  <rect width="480" height="160" rx="12" fill="#0D1117"/>
-  <rect x="1" y="1" width="478" height="158" rx="11" fill="none" stroke="#4F46E5" stroke-width="1.5" stroke-opacity="0.5"/>
-  <rect x="0" y="0" width="480" height="4" rx="2" fill="#4F46E5" opacity="0.8"/>
-  <!-- Total Contributions -->
-  <text x="80" y="72" font-family="system-ui,sans-serif" font-weight="800" font-size="44" fill="#ffffff" text-anchor="middle">686</text>
-  <text x="80" y="100" font-family="system-ui,sans-serif" font-weight="500" font-size="13" fill="#A1A1AA" text-anchor="middle">Total Contributions</text>
-  <!-- Divider -->
-  <line x1="160" y1="40" x2="160" y2="120" stroke="#27272A" stroke-width="1.5"/>
-  <!-- Current Streak -->
-  <text x="280" y="65" font-family="system-ui,sans-serif" font-weight="800" font-size="52" fill="#FF6B35" text-anchor="middle">76</text>
-  <text x="280" y="92" font-family="system-ui,sans-serif" font-weight="500" font-size="13" fill="#A1A1AA" text-anchor="middle">🔥 Current Streak</text>
-  <!-- Divider -->
-  <line x1="400" y1="40" x2="400" y2="120" stroke="#27272A" stroke-width="1.5"/>
-  <!-- Last Updated -->
-  <text x="440" y="70" font-family="system-ui,sans-serif" font-weight="600" font-size="11" fill="#71717A" text-anchor="middle">Updated</text>
-  <text x="440" y="88" font-family="system-ui,sans-serif" font-weight="600" font-size="11" fill="#71717A" text-anchor="middle">Jun 03, 2026</text>
+<svg width="600" height="200" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Deep background -->
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0D1117"/>
+      <stop offset="100%" stop-color="#161B22"/>
+    </linearGradient>
+
+    <!-- Indigo glow for total contributions -->
+    <radialGradient id="left-glow" cx="25%" cy="50%" r="40%">
+      <stop offset="0%" stop-color="#4F46E5" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#0D1117" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Orange glow for streak -->
+    <radialGradient id="right-glow" cx="65%" cy="50%" r="40%">
+      <stop offset="0%" stop-color="#FF6B35" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#0D1117" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Top accent bar gradient -->
+    <linearGradient id="top-bar" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4F46E5"/>
+      <stop offset="50%" stop-color="#7C3AED"/>
+      <stop offset="100%" stop-color="#FF6B35"/>
+    </linearGradient>
+
+    <!-- Border gradient -->
+    <linearGradient id="border-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4F46E5" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#FF6B35" stop-opacity="0.4"/>
+    </linearGradient>
+
+    <style>
+      /* Pulsing glow on orbs */
+      @keyframes pulse-left {
+        0%, 100% { opacity: 0.8; }
+        50% { opacity: 1; }
+      }
+      @keyframes pulse-right {
+        0%, 100% { opacity: 0.8; }
+        50% { opacity: 1; }
+      }
+      /* Floating top bar shimmer */
+      @keyframes shimmer {
+        0% { opacity: 0.7; }
+        50% { opacity: 1; }
+        100% { opacity: 0.7; }
+      }
+      /* Blink cursor */
+      @keyframes blink {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0; }
+      }
+      /* Subtle float for the numbers */
+      @keyframes float-num {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-3px); }
+      }
+
+      .top-bar { animation: shimmer 4s ease-in-out infinite; }
+      .left-glow { animation: pulse-left 5s ease-in-out infinite; }
+      .right-glow { animation: pulse-right 5s ease-in-out 1.5s infinite; }
+      .total-num { animation: float-num 6s ease-in-out infinite; transform-origin: center; }
+      .streak-num { animation: float-num 6s ease-in-out 2s infinite; transform-origin: center; }
+      .cursor { animation: blink 1.2s step-end infinite; }
+    </style>
+  </defs>
+
+  <!-- Base background -->
+  <rect width="600" height="200" rx="16" fill="url(#bg)"/>
+
+  <!-- Glow layers -->
+  <rect class="left-glow" width="600" height="200" rx="16" fill="url(#left-glow)"/>
+  <rect class="right-glow" width="600" height="200" rx="16" fill="url(#right-glow)"/>
+
+  <!-- Subtle dot grid -->
+  <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse">
+    <circle cx="12" cy="12" r="1" fill="#ffffff" opacity="0.03"/>
+  </pattern>
+  <rect width="600" height="200" rx="16" fill="url(#dots)"/>
+
+  <!-- Animated top accent bar -->
+  <rect class="top-bar" x="0" y="0" width="600" height="4" rx="2" fill="url(#top-bar)"/>
+
+  <!-- Border -->
+  <rect x="1" y="1" width="598" height="198" rx="15" fill="none" stroke="url(#border-grad)" stroke-width="1.5" opacity="0.6"/>
+
+  <!-- ── TOTAL CONTRIBUTIONS ── -->
+  <g class="total-num">
+    <text x="150" y="92" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-weight="900" font-size="56" fill="#ffffff" text-anchor="middle">686</text>
+  </g>
+  <text x="150" y="120" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-weight="500" font-size="13" fill="#6366F1" text-anchor="middle" letter-spacing="0.5">TOTAL CONTRIBUTIONS</text>
+
+  <!-- Vertical separator -->
+  <line x1="300" y1="50" x2="300" y2="150" stroke="#27272A" stroke-width="1.5"/>
+
+  <!-- ── CURRENT STREAK ── -->
+  <g class="streak-num">
+    <text x="420" y="86" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-weight="900" font-size="62" fill="#FF6B35" text-anchor="middle">76</text>
+  </g>
+  <!-- Fire emoji approach using text -->
+  <text x="380" y="125" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-weight="500" font-size="13" fill="#FF6B35" text-anchor="middle" opacity="0.9">🔥 CURRENT STREAK</text>
+  <text x="490" y="125" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-weight="500" font-size="13" fill="#FF6B35" text-anchor="middle" opacity="0.9">DAYS</text>
+
+  <!-- Bottom date row -->
+  <rect x="30" y="155" width="540" height="1" fill="#27272A"/>
+  <text x="300" y="178" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-weight="500" font-size="11" fill="#52525B" text-anchor="middle">
+    Updated Jun 03, 2026  •  Mar 21 → Present<tspan class="cursor" fill="#4F46E5"> |</tspan>
+  </text>
+
 </svg>
