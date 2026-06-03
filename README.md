@@ -41,7 +41,7 @@ I am a **B.Tech CSE Student** at **SRMIST** and a passionate Full-Stack Develope
 ### 🏆 GitHub Metrics
 
 <div align="center">
-  <img src="stats.svg" alt="GitHub Stats" width="60%" />
+  <img src="github-stats.svg" alt="GitHub Stats" width="60%" />
 </div>
 
 ---
