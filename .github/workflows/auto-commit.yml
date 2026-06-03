@@ -27,115 +27,13 @@ jobs:
           git config --global user.name "sautrikroy17"
           git config --global user.email "sautrikroy2006@gmail.com"
 
-          # ── 1. Fetch contribution data from GitHub GraphQL API ──
-          RESPONSE=$(curl -s -H "Authorization: bearer $GH_TOKEN" \
-            -H "Content-Type: application/json" \
-            -X POST https://api.github.com/graphql \
-            -d '{"query":"{ user(login: \"sautrikroy17\") { contributionsCollection { contributionCalendar { totalContributions weeks { contributionDays { contributionCount date } } } } } }"}')
+          # ── 1. Download the exact official Demolab SVG ──
+          curl -s "https://streak-stats.demolab.com/?user=sautrikroy17&theme=dark&hide_border=true&background=0D1117" > github-stats.svg
 
-          TOTAL=$(echo "$RESPONSE" | python3 -c "
-          import json,sys
-          data = json.load(sys.stdin)
-          print(data['data']['user']['contributionsCollection']['contributionCalendar']['totalContributions'])
-          ")
-
-          # ── 2. Calculate current streak ──
-          STREAK=$(echo "$RESPONSE" | python3 -c "
-          import json, sys
-          from datetime import date, timedelta
-
-          data = json.load(sys.stdin)
-          weeks = data['data']['user']['contributionsCollection']['contributionCalendar']['weeks']
-
-          days = []
-          for week in weeks:
-              for day in week['contributionDays']:
-                  days.append((day['date'], day['contributionCount']))
-
-          days.sort(reverse=True)
-          streak = 0
-          today = date.today()
-
-          for i, (d, count) in enumerate(days):
-              day_date = date.fromisoformat(d)
-              expected = today - timedelta(days=i)
-              # Allow today or yesterday to start
-              if i == 0 and count == 0:
-                  # check yesterday
-                  continue
-              if day_date == expected or (i == 0 and day_date == today - timedelta(days=1)):
-                  if count > 0:
-                      streak += 1
-                  else:
-                      break
-              else:
-                  break
-
-          print(streak)
-          ")
-
-          DATE=$(date -u +"%b %d, %Y")
-
-          # ── 3. Generate premium animated SVG ──
-          cat > github-stats.svg << SVGEOF
-<svg width="600" height="200" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0D1117"/><stop offset="100%" stop-color="#161B22"/>
-    </linearGradient>
-    <radialGradient id="left-glow" cx="25%" cy="50%" r="40%">
-      <stop offset="0%" stop-color="#4F46E5" stop-opacity="0.2"/><stop offset="100%" stop-color="#0D1117" stop-opacity="0"/>
-    </radialGradient>
-    <radialGradient id="right-glow" cx="65%" cy="50%" r="40%">
-      <stop offset="0%" stop-color="#FF6B35" stop-opacity="0.2"/><stop offset="100%" stop-color="#0D1117" stop-opacity="0"/>
-    </radialGradient>
-    <linearGradient id="top-bar" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#4F46E5"/><stop offset="50%" stop-color="#7C3AED"/><stop offset="100%" stop-color="#FF6B35"/>
-    </linearGradient>
-    <linearGradient id="border-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#4F46E5" stop-opacity="0.8"/><stop offset="100%" stop-color="#FF6B35" stop-opacity="0.4"/>
-    </linearGradient>
-    <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse">
-      <circle cx="12" cy="12" r="1" fill="#ffffff" opacity="0.03"/>
-    </pattern>
-    <style>
-      @keyframes shimmer { 0%,100%{opacity:.7} 50%{opacity:1} }
-      @keyframes pulse-l { 0%,100%{opacity:.8} 50%{opacity:1} }
-      @keyframes pulse-r { 0%,100%{opacity:.8} 50%{opacity:1} }
-      @keyframes float-n { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-3px)} }
-      @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
-      .top-bar{animation:shimmer 4s ease-in-out infinite}
-      .lg{animation:pulse-l 5s ease-in-out infinite}
-      .rg{animation:pulse-r 5s ease-in-out 1.5s infinite}
-      .tn{animation:float-n 6s ease-in-out infinite;transform-origin:center}
-      .sn{animation:float-n 6s ease-in-out 2s infinite;transform-origin:center}
-      .cur{animation:blink 1.2s step-end infinite}
-    </style>
-  </defs>
-  <rect width="600" height="200" rx="16" fill="url(#bg)"/>
-  <rect class="lg" width="600" height="200" rx="16" fill="url(#left-glow)"/>
-  <rect class="rg" width="600" height="200" rx="16" fill="url(#right-glow)"/>
-  <rect width="600" height="200" rx="16" fill="url(#dots)"/>
-  <rect class="top-bar" x="0" y="0" width="600" height="4" rx="2" fill="url(#top-bar)"/>
-  <rect x="1" y="1" width="598" height="198" rx="15" fill="none" stroke="url(#border-grad)" stroke-width="1.5" opacity="0.6"/>
-  <g class="tn">
-    <text x="150" y="92" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-weight="900" font-size="56" fill="#ffffff" text-anchor="middle">$TOTAL</text>
-  </g>
-  <text x="150" y="120" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-weight="500" font-size="13" fill="#6366F1" text-anchor="middle" letter-spacing="0.5">TOTAL CONTRIBUTIONS</text>
-  <line x1="300" y1="50" x2="300" y2="150" stroke="#27272A" stroke-width="1.5"/>
-  <g class="sn">
-    <text x="420" y="86" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-weight="900" font-size="62" fill="#FF6B35" text-anchor="middle">$STREAK</text>
-  </g>
-  <text x="420" y="122" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-weight="500" font-size="13" fill="#FF6B35" text-anchor="middle" opacity="0.9">&#x1F525; CURRENT STREAK DAYS</text>
-  <rect x="30" y="155" width="540" height="1" fill="#27272A"/>
-  <text x="300" y="178" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-weight="500" font-size="11" fill="#52525B" text-anchor="middle">Updated $DATE<tspan class="cur" fill="#4F46E5"> |</tspan></text>
-</svg>
-SVGEOF
-
-          # ── 4. Commit the daily log + new stats SVG ──
+          # ── 2. Commit the daily log + new stats SVG ──
           TIMESTAMP=$(date -u +"%Y-%m-%d %H:%M:%S UTC")
           echo "[$TIMESTAMP] Activity synced." >> activity_metrics.log
 
-          git add stats.svg activity_metrics.log
-          git commit -m "sync: daily stats update — streak: $STREAK | contributions: $TOTAL" || echo "No changes"
+          git add github-stats.svg activity_metrics.log
+          git commit -m "sync: daily stats update — official streak card" || echo "No changes"
           git push origin main
