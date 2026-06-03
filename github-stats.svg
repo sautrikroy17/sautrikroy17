@@ -10,62 +10,64 @@
   <rect width="700" height="200" rx="12" fill="url(#bg)"/>
   <rect x="1" y="1" width="698" height="198" rx="11" fill="none" stroke="#30363D" stroke-width="1.5"/>
 
-  <!-- LEFT: Total Contributions (fade in) -->
+  <!-- LEFT: Total Contributions -->
   <g opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="1s" begin="0.2s" fill="freeze"/>
+    <animate attributeName="opacity" from="0" to="1" dur="1.2s" begin="0s" fill="freeze"/>
     <text x="160" y="88" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-weight="800" font-size="48" fill="#E6EDF3" text-anchor="middle">686</text>
     <text x="160" y="115" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-weight="500" font-size="13" fill="#8B949E" text-anchor="middle">Total Contributions</text>
     <text x="160" y="135" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-weight="400" font-size="11" fill="#3FB950" text-anchor="middle">Jun 3, 2025 - Present</text>
   </g>
 
-  <!-- Separator left -->
+  <!-- Left separator -->
   <line x1="300" y1="40" x2="300" y2="160" stroke="#30363D" stroke-width="1"/>
 
-  <!-- CENTER: Animated ring -->
-  <g transform="translate(350, 95)">
-    <!-- Background ring track -->
-    <circle cx="0" cy="0" r="58" fill="none" stroke="#21262D" stroke-width="10"/>
+  <!-- CENTER ring background -->
+  <circle cx="350" cy="95" r="58" fill="none" stroke="#21262D" stroke-width="10"/>
 
-    <!-- Animated orange progress ring (SMIL) -->
-    <circle cx="0" cy="0" r="58" fill="none" stroke="#F78166" stroke-width="10"
-      stroke-dasharray="364" stroke-dashoffset="364"
-      stroke-linecap="round" transform="rotate(-90)">
-      <animate attributeName="stroke-dashoffset" from="364" to="0" dur="1.8s" begin="0.3s" fill="freeze" calcMode="ease"/>
-    </circle>
+  <!-- CENTER animated ring (draws itself) -->
+  <circle cx="350" cy="95" r="58" fill="none" stroke="#F78166" stroke-width="10"
+    stroke-dasharray="364.4" stroke-dashoffset="364.4"
+    stroke-linecap="round"
+    transform="rotate(-90 350 95)">
+    <animate attributeName="stroke-dashoffset"
+      from="364.4" to="0"
+      dur="1.8s" begin="0.2s"
+      fill="freeze"/>
+  </circle>
 
-    <!-- Flame (pulses via scale) -->
-    <text x="0" y="-10" font-size="24" text-anchor="middle">
-      🔥
-      <animateTransform attributeName="transform" type="scale"
-        values="1;1.12;1" dur="2.5s" repeatCount="indefinite" additive="sum"/>
-    </text>
-
-    <!-- Streak number fades in -->
-    <text x="0" y="26" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif"
-      font-weight="800" font-size="24" fill="#F78166" text-anchor="middle" opacity="0">
-      76
-      <animate attributeName="opacity" from="0" to="1" dur="0.6s" begin="1.5s" fill="freeze"/>
-    </text>
+  <!-- Flame icon (floats up/down) -->
+  <g transform="translate(350, 78)">
+    <animateTransform attributeName="transform" type="translate"
+      values="350,78; 350,74; 350,78"
+      dur="2.5s" repeatCount="indefinite"/>
+    <text x="0" y="0" font-size="22" text-anchor="middle">🔥</text>
   </g>
 
-  <!-- Current Streak label -->
+  <!-- Streak number inside ring -->
+  <text x="350" y="108" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif"
+    font-weight="800" font-size="22" fill="#F78166" text-anchor="middle" opacity="0">
+    76
+    <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="1.6s" fill="freeze"/>
+  </text>
+
+  <!-- Current Streak label below ring -->
   <text x="350" y="168" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif"
     font-weight="600" font-size="13" fill="#8B949E" text-anchor="middle" opacity="0">
     Current Streak
-    <animate attributeName="opacity" from="0" to="1" dur="0.6s" begin="1.8s" fill="freeze"/>
+    <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="1.8s" fill="freeze"/>
   </text>
   <text x="350" y="184" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif"
     font-weight="400" font-size="11" fill="#F78166" text-anchor="middle" opacity="0">
     Mar 21 - Jun 3
-    <animate attributeName="opacity" from="0" to="1" dur="0.6s" begin="1.8s" fill="freeze"/>
+    <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="1.8s" fill="freeze"/>
   </text>
 
-  <!-- Separator right -->
+  <!-- Right separator -->
   <line x1="400" y1="40" x2="400" y2="160" stroke="#30363D" stroke-width="1"/>
 
-  <!-- RIGHT: Longest Streak (fade in) -->
+  <!-- RIGHT: Longest Streak -->
   <g opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="1s" begin="0.5s" fill="freeze"/>
+    <animate attributeName="opacity" from="0" to="1" dur="1.2s" begin="0.4s" fill="freeze"/>
     <text x="550" y="88" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-weight="800" font-size="48" fill="#E6EDF3" text-anchor="middle">76</text>
     <text x="550" y="115" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-weight="500" font-size="13" fill="#8B949E" text-anchor="middle">Longest Streak</text>
     <text x="550" y="135" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-weight="400" font-size="11" fill="#3FB950" text-anchor="middle">Mar 21 - Jun 3</text>
