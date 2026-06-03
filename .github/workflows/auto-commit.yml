@@ -1,25 +1,42 @@
-name: Auto Commit
+name: Daily Activity Sync
 
 on:
   schedule:
-    # Runs at 12:00 UTC every day
-    - cron: '0 12 * * *'
-  workflow_dispatch: # Allows you to run this manually from the Actions tab
+    # Runs at 06:00 UTC (11:30 AM IST) every single day
+    - cron: '0 6 * * *'
+  workflow_dispatch: # Can be triggered manually from Actions tab anytime
+
+permissions:
+  contents: write
 
 jobs:
-  auto_commit:
+  daily_sync:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
 
-      - name: Commit and push changes
+      - name: Commit daily activity
+        env:
+          FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
         run: |
           git config --global user.name "sautrikroy17"
           git config --global user.email "sautrikroy2006@gmail.com"
-          echo "Syncing GitHub activity metrics on $(date)" >> activity_metrics.log
+
+          # Write a timestamped entry to the log
+          DATE=$(date -u +"%Y-%m-%d %H:%M:%S UTC")
+          echo "[$DATE] Activity synced." >> activity_metrics.log
+
           git add activity_metrics.log
-          git commit -m "chore: auto-sync live contribution graph [skip ci]" || echo "No changes to commit"
-          git push
+
+          # Only commit if there are actual staged changes
+          if git diff --staged --quiet; then
+            echo "No changes to commit today."
+          else
+            git commit -m "sync: daily activity log update $DATE"
+            git push origin main
+            echo "Successfully committed and pushed."
+          fi
