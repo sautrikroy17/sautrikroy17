@@ -41,11 +41,7 @@ I am a **B.Tech CSE Student** at **SRMIST** and a passionate Full-Stack Develope
 ### 🏆 GitHub Metrics
 
 <div align="center">
-  <img src="https://streak-stats.demolab.com/?user=sautrikroy17&theme=dark&hide_border=true&background=0D1117&stroke=4F46E5&ring=4F46E5&fire=FF6B35&currStreakLabel=ffffff&dates=A1A1AA" alt="GitHub Streak" width="55%" />
-</div>
-
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=sautrikroy17&layout=compact&theme=dark&hide_border=true&bg_color=0D1117&title_color=4F46E5&text_color=ffffff&langs_count=6" alt="Top Languages" width="45%" />
+  <img src="stats.svg" alt="GitHub Stats" width="60%" />
 </div>
 
 ---

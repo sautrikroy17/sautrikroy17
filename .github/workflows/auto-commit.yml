@@ -4,7 +4,7 @@ on:
   schedule:
     # Runs at 06:00 UTC (11:30 AM IST) every single day
     - cron: '0 6 * * *'
-  workflow_dispatch: # Can be triggered manually from Actions tab anytime
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -19,24 +19,93 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
 
-      - name: Commit daily activity
+      - name: Generate stats and commit
         env:
           FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config --global user.name "sautrikroy17"
           git config --global user.email "sautrikroy2006@gmail.com"
 
-          # Write a timestamped entry to the log
-          DATE=$(date -u +"%Y-%m-%d %H:%M:%S UTC")
-          echo "[$DATE] Activity synced." >> activity_metrics.log
+          # ── 1. Fetch contribution data from GitHub GraphQL API ──
+          RESPONSE=$(curl -s -H "Authorization: bearer $GH_TOKEN" \
+            -H "Content-Type: application/json" \
+            -X POST https://api.github.com/graphql \
+            -d '{"query":"{ user(login: \"sautrikroy17\") { contributionsCollection { contributionCalendar { totalContributions weeks { contributionDays { contributionCount date } } } } } }"}')
 
-          git add activity_metrics.log
+          TOTAL=$(echo "$RESPONSE" | python3 -c "
+          import json,sys
+          data = json.load(sys.stdin)
+          print(data['data']['user']['contributionsCollection']['contributionCalendar']['totalContributions'])
+          ")
 
-          # Only commit if there are actual staged changes
-          if git diff --staged --quiet; then
-            echo "No changes to commit today."
-          else
-            git commit -m "sync: daily activity log update $DATE"
-            git push origin main
-            echo "Successfully committed and pushed."
-          fi
+          # ── 2. Calculate current streak ──
+          STREAK=$(echo "$RESPONSE" | python3 -c "
+          import json, sys
+          from datetime import date, timedelta
+
+          data = json.load(sys.stdin)
+          weeks = data['data']['user']['contributionsCollection']['contributionCalendar']['weeks']
+
+          days = []
+          for week in weeks:
+              for day in week['contributionDays']:
+                  days.append((day['date'], day['contributionCount']))
+
+          days.sort(reverse=True)
+          streak = 0
+          today = date.today()
+
+          for i, (d, count) in enumerate(days):
+              day_date = date.fromisoformat(d)
+              expected = today - timedelta(days=i)
+              # Allow today or yesterday to start
+              if i == 0 and count == 0:
+                  # check yesterday
+                  continue
+              if day_date == expected or (i == 0 and day_date == today - timedelta(days=1)):
+                  if count > 0:
+                      streak += 1
+                  else:
+                      break
+              else:
+                  break
+
+          print(streak)
+          ")
+
+          DATE=$(date -u +"%b %d, %Y")
+
+          # ── 3. Generate SVG locally (no external services) ──
+          cat > stats.svg << SVGEOF
+          <svg width="480" height="160" viewBox="0 0 480 160" xmlns="http://www.w3.org/2000/svg">
+            <rect width="480" height="160" rx="12" fill="#0D1117"/>
+            <rect x="1" y="1" width="478" height="158" rx="11" fill="none" stroke="#4F46E5" stroke-width="1.5" stroke-opacity="0.5"/>
+            <!-- Glow accent -->
+            <rect x="0" y="0" width="480" height="4" rx="2" fill="#4F46E5" opacity="0.8"/>
+            <!-- Total Contributions -->
+            <text x="80" y="72" font-family="system-ui,sans-serif" font-weight="800" font-size="44" fill="#ffffff" text-anchor="middle">$TOTAL</text>
+            <text x="80" y="100" font-family="system-ui,sans-serif" font-weight="500" font-size="13" fill="#A1A1AA" text-anchor="middle">Total Contributions</text>
+            <!-- Divider -->
+            <line x1="160" y1="40" x2="160" y2="120" stroke="#27272A" stroke-width="1.5"/>
+            <!-- Current Streak -->
+            <text x="280" y="65" font-family="system-ui,sans-serif" font-weight="800" font-size="52" fill="#FF6B35" text-anchor="middle">$STREAK</text>
+            <text x="280" y="92" font-family="system-ui,sans-serif" font-weight="500" font-size="13" fill="#A1A1AA" text-anchor="middle">&#x1F525; Current Streak</text>
+            <!-- Divider -->
+            <line x1="400" y1="40" x2="400" y2="120" stroke="#27272A" stroke-width="1.5"/>
+            <!-- Last Updated -->
+            <text x="440" y="70" font-family="system-ui,sans-serif" font-weight="600" font-size="11" fill="#71717A" text-anchor="middle">Updated</text>
+            <text x="440" y="88" font-family="system-ui,sans-serif" font-weight="600" font-size="11" fill="#71717A" text-anchor="middle">$DATE</text>
+          </svg>
+          SVGEOF
+
+          # Clean up whitespace from heredoc indentation
+          sed -i 's/^          //' stats.svg
+
+          # ── 4. Commit the daily log + new stats SVG ──
+          TIMESTAMP=$(date -u +"%Y-%m-%d %H:%M:%S UTC")
+          echo "[$TIMESTAMP] Activity synced." >> activity_metrics.log
+
+          git add stats.svg activity_metrics.log
+          git commit -m "sync: daily stats update — streak: $STREAK | contributions: $TOTAL" || echo "No changes"
+          git push origin main
