@@ -30,8 +30,10 @@ jobs:
           # ── 1. Download the SVG from a more reliable host and validate it ──
           curl -s "https://github-readme-streak-stats.herokuapp.com/?user=sautrikroy17&theme=dark&hide_border=true&background=0D1117" > github-stats-new.svg
           
-          if grep -qi "Failed to retrieve" github-stats-new.svg; then
-            echo "Failed to retrieve SVG from API. Skipping update to avoid breaking the README."
+          if ! grep -qi "<svg" github-stats-new.svg; then
+            echo "API did not return a valid SVG (might be down). Skipping update to avoid breaking the README."
+          elif grep -qi "Failed to retrieve" github-stats-new.svg; then
+            echo "Failed to retrieve SVG from API (rate limited). Skipping update to avoid breaking the README."
           else
             mv github-stats-new.svg github-stats.svg
           fi
