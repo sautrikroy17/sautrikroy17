@@ -27,8 +27,14 @@ jobs:
           git config --global user.name "sautrikroy17"
           git config --global user.email "sautrikroy2006@gmail.com"
 
-          # ── 1. Download the exact official Demolab SVG ──
-          curl -s "https://streak-stats.demolab.com/?user=sautrikroy17&theme=dark&hide_border=true&background=0D1117" > github-stats.svg
+          # ── 1. Download the SVG from a more reliable host and validate it ──
+          curl -s "https://github-readme-streak-stats.herokuapp.com/?user=sautrikroy17&theme=dark&hide_border=true&background=0D1117" > github-stats-new.svg
+          
+          if grep -qi "Failed to retrieve" github-stats-new.svg; then
+            echo "Failed to retrieve SVG from API. Skipping update to avoid breaking the README."
+          else
+            mv github-stats-new.svg github-stats.svg
+          fi
 
           # ── 2. Commit the daily log + new stats SVG ──
           TIMESTAMP=$(date -u +"%Y-%m-%d %H:%M:%S UTC")
