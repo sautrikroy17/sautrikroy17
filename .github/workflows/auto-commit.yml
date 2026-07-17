@@ -28,7 +28,7 @@ jobs:
           git config --global user.email "sautrikroy2006@gmail.com"
 
           # ── 1. Download the SVG from a more reliable host and validate it ──
-          curl -s "https://github-readme-streak-stats.herokuapp.com/?user=sautrikroy17&theme=dark&hide_border=true&background=0D1117" > github-stats-new.svg
+          curl -s "https://github-readme-streak-stats.herokuapp.com/?user=sautrikroy17&theme=dark&hide_border=true&background=0D1117&v=$(date +%s)" > github-stats-new.svg
           
           if ! grep -qi "<svg" github-stats-new.svg; then
             echo "API did not return a valid SVG (might be down). Skipping update to avoid breaking the README."
