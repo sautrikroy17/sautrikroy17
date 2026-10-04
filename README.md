@@ -48,6 +48,9 @@ I am a **B.Tech CSE Student** at **SRMIST** and a passionate Full-Stack Develope
 
 ### 🔥 Engineering Projects
 
+#### [🛡️ Sentinel — Defense Mental Readiness & Telehealth (SIH)](https://github.com/sautrikroy17/Sentinel_SIH)
+An AI-driven mental health readiness and telemedicine platform engineered for armed forces personnel (Smart India Hackathon 2026, Top 100 Teams). Features assessment scoring across 5 key wellness indicators, WebRTC peer-to-peer telehealth consultations, and an offline-first PWA caching records in IndexedDB for low-connectivity environments.
+
 #### [💡 Quizzify AI](https://github.com/sautrikroy17/Quizzify)
 A competitive assessment platform utilizing **Google Gemini AI** and a **C++ backend engine** to parse and generate interactive quizzes from raw PDF files in seconds. Features secure JWT authentication and global leaderboards.
 
@@ -62,9 +65,6 @@ An ultra-premium, highly interactive full-stack developer portfolio built with *
 
 #### [💳 Credit Card Validator](https://github.com/sautrikroy17/Credit-Card-Validator)
 A high-speed, object-oriented Python utility that implements the **Luhn Algorithm** for robust checksum validation. Identifies major card networks (Visa, Mastercard, Amex, etc.) with real-time terminal processing.
-
-#### [🧠 Krish AI](https://github.com/sautrikroy17/krish-ai)
-An intelligent, high-speed conversational AI interface powered by **Llama 3.3 70B** and **Groq LPU**. Built with Next.js and optimized for zero-latency streaming responses and a highly interactive UI. *(🚧 Actively in development)*
 
 ---
 
